@@ -9,7 +9,7 @@ Ultach es la marca paraguas de los productos y trabajos de Pablo. Esta landing:
 3. Centraliza el contacto y el soporte por WhatsApp.
 4. Capta clientes para software y landings a medida.
 
-Cada app lleva en el footer la firma "hecho por ultach", con link a esta landing.
+Cada app lleva en el footer la firma `<ultach-firma>`, servida desde `ultach.ar/firma.js`: "hecho por ultach" (sitios de clientes) o "un producto de ultach" (productos propios). Textos en `content.ts` (`firma`); cambiarla acá la cambia en todas las apps. Uso y atributos: `docs/firma.md`.
 
 ## Stack
 
@@ -26,11 +26,13 @@ src/
     page.tsx            # Variante A "Noche" = LANDING PRINCIPAL
     noche/page.tsx      # redirect a /
     variantes/page.tsx  # selector interno de variantes (no linkeado)
+    firma.js/route.ts   # firma remota <ultach-firma> que cargan las otras apps (cache 1h en next.config.ts)
+    firma/page.tsx      # vista previa interna de la firma + snippets (noindex, no linkeado)
     vuelo/page.tsx      # Variante B
     nodo/page.tsx       # Variante C
     sombra/page.tsx     # Variante D
   components/
-    shared/             # Logo, WhatsAppLink: los comparten todas las variantes
+    shared/             # Logo, WhatsAppLink: los comparten todas las variantes; emblem.ts dibuja el isotipo (lo usan LogoMark y firma.js)
     variants/<nombre>/  # Hero 3D + secciones propias de cada variante
     variants/noche/hero/ # hero 3D de Noche: piezas (Tiles), láminas (Slats), fondo y entrada del texto
     variants/noche/NocheProjects.tsx # catálogo de proyectos: nombres gigantes con marcador que maneja el scroll
