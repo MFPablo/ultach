@@ -1,0 +1,105 @@
+/* Entrada del texto del hero. Cada elemento lleva su clase y --at (inicio) / --dur (duración) inline.
+   Nada arranca hasta que la raíz tiene [data-play] (HeroPlay). Todo vive dentro de no-preference:
+   con reduced motion el hero aparece armado. Sin JS, el <noscript> de HeroPlay lo muestra armado. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hb-root:not([data-play]) .hb-rise,
+  .hb-root:not([data-play]) .hb-fade,
+  .hb-root:not([data-play]) .hb-nav > header {
+    opacity: 0;
+  }
+
+  .hb-root[data-play] .hb-rise {
+    animation: hb-rise var(--dur, 0.8s) cubic-bezier(0.2, 0.7, 0.2, 1) var(--at, 0s) both;
+  }
+  .hb-root[data-play] .hb-fade {
+    animation: hb-fade var(--dur, 0.8s) ease-out var(--at, 0s) both;
+  }
+  .hb-root[data-play] .hb-nav > header {
+    animation: hb-navDown 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--at, 0s) both;
+  }
+}
+
+@keyframes hb-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hb-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hb-navDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Borradores del hero (/hero/[opcion]). Las palabras llevan hb-rise además de su clase, así heredan
+   el estado inicial y el <noscript>. --at2: cuándo se apaga lo que sobra. */
+@media (prefers-reduced-motion: no-preference) {
+  .hb-root[data-play] .hb-rise.hb-dim {
+    animation:
+      hb-rise var(--dur, 0.8s) cubic-bezier(0.2, 0.7, 0.2, 1) var(--at, 0s) both,
+      hb-dim 1.2s ease var(--at2, 0s) forwards;
+  }
+  .hb-root[data-play] .hb-rise.hb-key {
+    animation:
+      hb-rise var(--dur, 0.8s) cubic-bezier(0.2, 0.7, 0.2, 1) var(--at, 0s) both,
+      hb-key 1.2s ease var(--at2, 0s) forwards;
+  }
+  .hb-root[data-play] .hb-fade.hb-type {
+    animation: hb-type var(--dur, 0.6s) steps(24, end) var(--at, 0s) both;
+  }
+  .hb-caret {
+    animation: hb-blink 1s steps(1) infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hb-dim {
+    opacity: 0.2;
+  }
+  .hb-key {
+    color: var(--key, #f7c062);
+  }
+}
+
+/* La cola que queda encendida pasa del gris a --key (el ámbar del logo, inline). */
+
+@keyframes hb-dim {
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes hb-key {
+  to {
+    color: var(--key, #f7c062);
+  }
+}
+@keyframes hb-type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes hb-blink {
+  50% {
+    opacity: 0;
+  }
+}
