@@ -18,13 +18,23 @@ export const brand = {
 };
 
 // Firma que llevan las otras apps en el footer. La sirve /firma.js: cambiar acá cambia la firma en todas.
-export const SITE_URL = "https://ultach.ar";
+// Dominio canónico: ultach.ar redirige (308) a www.
+export const SITE_URL = "https://www.ultach.ar";
 
 export const firma = {
   /** variant="design": sitios hechos para clientes. */
   design: "hecho por",
   /** variant="powered": productos propios (Mindora, Tendu, trac.ar). */
   powered: "un producto de",
+};
+
+// Vista previa al compartir el link (title, description, OG). La imagen la arma src/app/opengraph-image.tsx.
+export const seo = {
+  title: "ultach · software y sitios web a medida",
+  description:
+    "Hacemos software que se usa todos los días y sitios web a medida para marcas y profesionales. Escribinos y lo charlamos.",
+  /** Línea chica debajo del wordmark en la imagen OG. */
+  ogLine: "Software y sitios web a medida.",
 };
 
 // Hero de la home: una cita que entra palabra por palabra; después se apaga todo menos `keep`.

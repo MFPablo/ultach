@@ -1,7 +1,7 @@
 # Firma `<ultach-firma>`
 
 Firma "hecho por ultach" / "un producto de ultach" para el footer de las otras apps. Vive en este repo y
-la sirve `https://ultach.ar/firma.js`: cambiar texto, link, logo o estética acá y deployar la cambia en
+la sirve `https://www.ultach.ar/firma.js`: cambiar texto, link, logo o estética acá y deployar la cambia en
 todas las apps, sin tocarlas.
 
 Vista previa y probador: `/firma` (página interna, no indexada).
@@ -13,7 +13,7 @@ Vista previa y probador: `/firma` (página interna, no indexada).
 HTML / Vite (`index.html`):
 
 ```html
-<script src="https://ultach.ar/firma.js" defer></script>
+<script src="https://www.ultach.ar/firma.js" defer></script>
 ```
 
 Next.js (en el layout):
@@ -21,7 +21,7 @@ Next.js (en el layout):
 ```tsx
 import Script from "next/script";
 
-<Script src="https://ultach.ar/firma.js" strategy="afterInteractive" />
+<Script src="https://www.ultach.ar/firma.js" strategy="afterInteractive" />
 ```
 
 ### 2. Poner la firma en el footer
@@ -30,7 +30,7 @@ Sitio de un cliente:
 
 ```html
 <ultach-firma variant="design" theme="dark" app="nombre-cliente">
-  <a href="https://ultach.ar">hecho por ultach</a>
+  <a href="https://www.ultach.ar">hecho por ultach</a>
 </ultach-firma>
 ```
 
@@ -38,7 +38,7 @@ Producto propio (Mindora, Tendu, trac.ar):
 
 ```html
 <ultach-firma variant="powered" theme="light" app="mindora">
-  <a href="https://ultach.ar">un producto de ultach</a>
+  <a href="https://www.ultach.ar">un producto de ultach</a>
 </ultach-firma>
 ```
 
@@ -85,6 +85,6 @@ en las apps con TypeScript (solo los tipos; el comportamiento llega solo).
 
 ## Requisitos en cada app
 
-- **CSP**: si la app tiene Content-Security-Policy, agregar `https://ultach.ar` a `script-src`,
+- **CSP**: si la app tiene Content-Security-Policy, agregar `https://www.ultach.ar` a `script-src`,
   `https://fonts.googleapis.com` a `style-src` y `https://fonts.gstatic.com` a `font-src`.
-- **Dominio**: `ultach.ar` tiene que apuntar a este proyecto en Vercel.
+- **Dominio**: usar siempre `www.ultach.ar` (el dominio sin www redirige y suma un salto).

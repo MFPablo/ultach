@@ -9,7 +9,7 @@ Ultach es la marca paraguas de los productos y trabajos de Pablo. Esta landing:
 3. Centraliza el contacto y el soporte por WhatsApp.
 4. Capta clientes para software y landings a medida.
 
-Cada app lleva en el footer la firma `<ultach-firma>`, servida desde `ultach.ar/firma.js`: "hecho por ultach" (sitios de clientes) o "un producto de ultach" (productos propios). Textos en `content.ts` (`firma`); cambiarla acá la cambia en todas las apps. Uso y atributos: `docs/firma.md`.
+Cada app lleva en el footer la firma `<ultach-firma>`, servida desde `www.ultach.ar/firma.js`: "hecho por ultach" (sitios de clientes) o "un producto de ultach" (productos propios). Textos en `content.ts` (`firma`); cambiarla acá la cambia en todas las apps. Uso y atributos: `docs/firma.md`.
 
 ## Stack
 

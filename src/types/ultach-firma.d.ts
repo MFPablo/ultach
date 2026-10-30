@@ -1,4 +1,4 @@
-// Tipos JSX de <ultach-firma> (lo define https://ultach.ar/firma.js). Copiar este archivo tal cual
+// Tipos JSX de <ultach-firma> (lo define https://www.ultach.ar/firma.js). Copiar este archivo tal cual
 // en las apps con React + TypeScript que usen la firma.
 import "react";
 

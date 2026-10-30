@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import { brand } from "@/lib/content";
+import { seo } from "@/lib/content";
 import { NocheNav } from "@/components/variants/noche/NocheNav";
 import { NocheHero } from "@/components/variants/noche/NocheHero";
 import { HeroPlay } from "@/components/variants/noche/hero/play";
@@ -10,22 +10,22 @@ import { NocheServices } from "@/components/variants/noche/NocheServices";
 import { NocheProjects } from "@/components/variants/noche/NocheProjects";
 import { NocheFooter } from "@/components/variants/noche/NocheFooter";
 
-const title = `ultach — ${brand.tagline}`;
-
 export const metadata: Metadata = {
-  title,
-  description: brand.intro,
+  title: { absolute: seo.title },
+  description: seo.description,
+  alternates: { canonical: "/" },
   openGraph: {
-    title,
-    description: brand.intro,
+    title: seo.title,
+    description: seo.description,
+    url: "/",
     type: "website",
     locale: "es_AR",
     siteName: "ultach",
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description: brand.intro,
+    title: seo.title,
+    description: seo.description,
   },
 };
 

@@ -2,8 +2,8 @@ import { emblemInner } from "@/components/shared/emblem";
 import { SITE_URL, firma } from "@/lib/content";
 
 // Firma "hecho por ultach" para el footer de las otras apps. Define el web component <ultach-firma>:
-//   <script src="https://ultach.ar/firma.js" defer></script>
-//   <ultach-firma variant="powered" theme="dark" app="mindora"><a href="https://ultach.ar">ultach</a></ultach-firma>
+//   <script src="https://www.ultach.ar/firma.js" defer></script>
+//   <ultach-firma variant="powered" theme="dark" app="mindora"><a href="https://www.ultach.ar">ultach</a></ultach-firma>
 // Atributos: variant (design | powered), theme (dark: con noche | light: sin noche), app (utm_source del link),
 // logo (false para ocultar el emblema; por defecto se muestra). El <a> de adentro es el fallback si el script no carga.
 // Se prerenderiza en el build; el Cache-Control corto está en next.config.ts.
